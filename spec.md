@@ -1,4 +1,5 @@
 # Lab Week 4 - JS Language Intro, Diagramming, & DevTools Part 2
+
 ## New Lab Structure
 
 We have decided to break the labs into 3 distinct sections: **Expose**, **Explore**, and **Expand**.
@@ -15,7 +16,7 @@ Since this is CSE 110 we know you have programmed before, so this lab will more-
 
 ### FAQ
 
-[FAQ - Lab Week 4](https://docs.google.com/document/d/1iMSndYyQYLVNDi2Ip4kRen81wjZRvOMzjAM9x5J84EI/edit?usp=sharing)
+[FAQ - Lab Week 4](faq.md)
 
 ### Resources
 
@@ -26,14 +27,18 @@ Since this is CSE 110 we know you have programmed before, so this lab will more-
 
 - Install Node [https://nodejs.org/en/](https://nodejs.org/en/)
 - Create a new repo named “sp24-cse110-lab4”. Create the following directory structure (note: these are all directories, so expose/javascript is a folder within a folder):
-    - **expose/javascript**
-    - **expose/pipeline**
-    - **explore/devtools**
-    - **explore/diagramming**
-    - **expand**
+  - **expose/javascript**
+  - **expose/pipeline**
+  - **explore/devtools**
+  - **explore/diagramming**
+  - **expand**
 - For the second part of the expose section please join this [Github Classroom](https://classroom.github.com/a/wvVR0zKR) and clone this repo. Then follow the instructions on the readme.
 - To complete the **explore** section, install the [Draw.io](http://draw.io/) VSCode Extension [Draw.io Integration - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=hediet.vscode-drawio)
 - You will store your answers from each part in the corresponding directory.
+
+### Lab 4 Intro Video
+
+![Lab4 Intro Video](lab4_intro.mp4)
 
 ### Intro to JavaScript
 
@@ -41,7 +46,7 @@ Since this is CSE 110 we know you have programmed before, so this lab will more-
 
 Inside the **expose/javascript** directory, create [**part1.md**](http://part1.md/) and [**part2.md**](http://part2.md/) files inside where you will store your answers for the javascript questions.
 
-If the question has you write any code, unless specified otherwise, create a JavaScript file with the name format **partX-questionY.js**. So for example, if the question was number 14 in part 1 you would have **part1-question14.js** as your filename. You can run and test these js files with Node from your command line by executing the command “node _**filename**_.js”. Make sure that your answer numbers in your markdown files match our answer numbers as you might skip some if one is a question where you write code.
+If the question has you write any code, unless specified otherwise, create a JavaScript file with the name format **partX-questionY.js**. So for example, if the question was number 14 in part 1 you would have **part1-question14.js** as your filename. You can run and test these js files with Node from your command line by executing the command “node ***filename***.js”. Make sure that your answer numbers in your markdown files match our answer numbers as you might skip some if one is a question where you write code.
 
 #### Variables & Scoping
 
@@ -58,6 +63,7 @@ For this section (questions 1-6), observe the effect that the keywords const, 
 ###### **var declaration**
 
 The var keyword provides its variable with what is known as **function scope**. This means that regardless of the block it is defined in, it can be accessed anywhere inside the function it is defined in. Be careful when using var to declare your variables in your programs, as it may lead to naming conflicts and scoping issues.
+
 ```JavaScript
 function sumValues(num1, num2, add) {
 	if (add) {
@@ -69,6 +75,7 @@ function sumValues(num1, num2, add) {
 }
 sumValues(10, 10, true);
 ```
+
 1. What is printed by line 9? If the code returns an error, explain why. ^^^^^
 2. What is printed by line 13? If the code returns an error, explain why.
 
@@ -94,6 +101,7 @@ sumValues(10, 10, true);
 ###### **const declaration**
 
 The const keyword gives its variable the same scope as the let keyword. Declaring a variable with the const prevents it from being reassigned after it is assigned for the first time, much like the final keyword in Java, making it useful for declaring constants in your programs.
+
 ```JavaScript
 function sumValues(num1, num2, add) {
 	if (add) {
@@ -105,12 +113,14 @@ function sumValues(num1, num2, add) {
 }
 sumValues(10, 10, true);
 ```
+
 5. What is printed by line 9? If the code returns an error, explain why. ^^^^^
 6. What is printed by line 13? If the code returns an error, explain why.
 
 ##### Part 2. A Little More of a Challenge
 
 In this next section, use what you understand about the differences between declaring variables with var, let, and const to help you work with a more complicated block of code.
+
 ```JavaScript
 // Question 1
 function discountPrices(prices, discount) {
@@ -132,7 +142,9 @@ function discountPrices(prices, discount) {
 
 discountPrices([100, 200, 300], 0.5);
 ```
+
 1. ^^^ What will happen at line 12 and why? If the code causes an error, explain why. ^^^
+
 ```JavaScript
 // Question 2
 function discountPrices(prices, discount) {
@@ -154,7 +166,9 @@ function discountPrices(prices, discount) {
 
 discountPrices([100, 200, 300], 0.5);
 ```
+
 2. ^^^ What will happen at line 13 and why? If the code causes an error, explain why. ^^^
+
 ```JavaScript
 // Question 3
 function discountPrices(prices, discount) {
@@ -176,7 +190,9 @@ function discountPrices(prices, discount) {
 
 discountPrices([100, 200, 300], 0.5);
 ```
+
 3. ^^^ What will happen at line 14 and why? If the code causes an error, explain why. ^^^
+
 ```JavaScript
 // Question 4
 function discountPrices(prices, discount) {
@@ -198,7 +214,9 @@ function discountPrices(prices, discount) {
 
 discountPrices([100, 200, 300], 0.5);
 ```
+
 4. ^^^ What will this function return? Give a brief explanation why. If the code causes an error, explain why. ^^^
+
 ```JavaScript
 // Question 5
 function discountPrices(prices, discount) {
@@ -218,7 +236,9 @@ function discountPrices(prices, discount) {
 	return discounted;
 }
 ```
+
 5. ^^^ What will happen at line 12 and why? If the code causes an error, explain why. ^^^ (assume this function is being called like the others: `discountPrices([100, 200, 300], 0.5)`).
+
 ```JavaScript
 // Question 6
 function discountPrices(prices, discount) {
@@ -240,7 +260,9 @@ function discountPrices(prices, discount) {
 
 discountPrices([100, 200, 300], 0.5);
 ```
+
 6. ^^^ What will happen at line 13 and why? If the code causes an error, explain why. ^^^
+
 ```JavaScript
 // Question 7
 function discountPrices(prices, discount) {
@@ -262,7 +284,9 @@ function discountPrices(prices, discount) {
 
 discountPrices([100, 200, 300], 0.5);
 ```
+
 7. ^^^ What will happen at line 14 and why? If the code causes an error, explain why. ^^^
+
 ```JavaScript
 // Question 8
 function discountPrices(prices, discount) {
@@ -284,6 +308,7 @@ function discountPrices(prices, discount) {
 
 discountPrices([100, 200, 300], 0.5);
 ```
+
 8. ^^^ What will this function return? Give a brief explanation. If the code causes an error, explain why. ^^^
 
 ```JavaScript
@@ -373,11 +398,11 @@ let student = {
 ```
 
 12. Given the above Object, write the notation for: (These should be in your **part2.md**)
-	1. Accessing the value of the name property in the student object
-	2. Accessing the value of the Grad Year property in the student object
-	3. Calling the function for the greeting property in the student object
-	4. Accessing the name property of the object in the Favorite Teacher property in student
-	5. Access index zero in the array of the courseLoad property of the student object
+    1.  Accessing the value of the name property in the student object
+    2.  Accessing the value of the Grad Year property in the student object
+    3.  Calling the function for the greeting property in the student object
+    4.  Accessing the name property of the object in the Favorite Teacher property in student
+    5.  Access index zero in the array of the courseLoad property of the student object
 
 #### Basic Operators & Type Conversion
 
@@ -481,7 +506,7 @@ let time = d.toLocaleTimeString();
 console.log(time);
 ```
 
-18. The above program only prints out the time once when executed. Modify this code such that the program prints out the _current_ time every second.  (This should be a JS file - **part2-question18.js**)
+18. The above program only prints out the time once when executed. Modify this code such that the program prints out the *current* time every second.  (This should be a JS file - **part2-question18.js**)
 
 ```JavaScript
 function printNums() {
@@ -554,8 +579,8 @@ Note: Do not debug using console.log(). Practice using the Debugging tool in the
 
 During your debugging process, include the following screenshots:
 
-- When the debugger is triggered, set a breakpoint at the initialization of the local variable _result_ in calculateSum(). Take a screenshot of the list of breakpoints containing the breakpoint you just added. Name it **result-calculateSum.png** (or whatever image extension you would like to use) and add it to your **expand/screenshots** directory.
-- Add watch expressions to find the value of _num1_ and _num2_, and the **data type** of _result_. Take a screenshot of the watch expressions list. Name it **result-dataType.png** (or whatever image extension you would like to use) and add it to your **expand/screenshots** directory.
+- When the debugger is triggered, set a breakpoint at the initialization of the local variable *result* in calculateSum(). Take a screenshot of the list of breakpoints containing the breakpoint you just added. Name it **result-calculateSum.png** (or whatever image extension you would like to use) and add it to your **expand/screenshots** directory.
+- Add watch expressions to find the value of *num1* and *num2*, and the **data type** of *result*. Take a screenshot of the watch expressions list. Name it **result-dataType.png** (or whatever image extension you would like to use) and add it to your **expand/screenshots** directory.
 
 Answer the following questions:
 
@@ -574,16 +599,16 @@ Now in this file simply make a flowchart for the website (a very simplified reta
 
 - The user begins by entering the website
 - The user then has the option of either searching for a product or exploring the products on the home page
-    - If they search for a product, they will provide input to the website of their search
+  - If they search for a product, they will provide input to the website of their search
 - In both cases, the user will then begin looking over the products
 - The user is then faced with the option of viewing a specific product
-    - Both options will lead to them deciding whether to continue shopping, but if they add it to their cart they will receive an added to cart confirmation first
-    - They will then have the option to add this item to their cart
-    - If they choose to view a specific product, that product’s webpage will open
-    - If they don’t choose to view the item, they will be faced with the decision to continue shopping
+  - Both options will lead to them deciding whether to continue shopping, but if they add it to their cart they will receive an added to cart confirmation first
+  - They will then have the option to add this item to their cart
+  - If they choose to view a specific product, that product’s webpage will open
+  - If they don’t choose to view the item, they will be faced with the decision to continue shopping
 - If the user decides to continue shopping, they will again be faced with the choice of searching for a new product or not
 - If they decide to not continue shopping, they will have to decide whether or not to checkout.
-    - If they don’t check out, they leave the website
+  - If they don’t check out, they leave the website
 - If they do decide to check out, they will reach the View Cart screen
 - From the View Cart screen they will go to the View Payment screen
 - From the View Payment screen they will give input of their payment information
@@ -593,7 +618,7 @@ After the order confirmation screen the user will leave the website
 
 ## 3. Expand - No Points, No Extra Credit
 
-The following are a series of free response questions. If you complete this section, please complete every question, and please leave full, thought out responses. All of these questions should be _**in your own words.**_ Put your answers in **expand.md** inside the **expand** directory
+The following are a series of free response questions. If you complete this section, please complete every question, and please leave full, thought out responses. All of these questions should be ***in your own words.*** Put your answers in **expand.md** inside the **expand** directory
 
 1. Some JavaScript developers believe that most of the issues with JavaScript stem from its asynchronous nature, its loose typing, and the web platform it runs on. For each of the three reasons listed, explain in your own words why a developer might believe that it is a pain point.
 2. Related to the first question, why do you believe that the developer(s) who created JavaScript made it loosely typed? Why do you think they added asynchronous features?
@@ -606,20 +631,20 @@ The following are a series of free response questions. If you complete this sect
 Please make sure to follow this repository structure **exactly**! Not doing so may result in a deduction of points.
 
 - Link to your repo containing:
-    - **expose** directory
-        - **javascript** subdirectory
-            - **part1.md**
-            - **part2.md**
-            - any **.js** files
-        - **pipeline** subdirectory
-            - screenshot of your pull request
-    - **explore** directory
-        - **devtools** subdirectory
-            - **devtools-part1.md**
-            - **devtools-part2.md**
-        - **diagramming** subdirectory
-            - **diagram.drawio.png**
+  - **expose** directory
+    - **javascript** subdirectory
+      - **part1.md**
+      - **part2.md**
+      - any **.js** files
+    - **pipeline** subdirectory
+      - screenshot of your pull request
+  - **explore** directory
+    - **devtools** subdirectory
+      - **devtools-part1.md**
+      - **devtools-part2.md**
+    - **diagramming** subdirectory
+      - **diagram.drawio.png**
 - **expand** directory
-    - **expand.md**
-    - **screenshots** subdirectory
-        - all screenshots taken
+  - **expand.md**
+  - **screenshots** subdirectory
+    - all screenshots taken
